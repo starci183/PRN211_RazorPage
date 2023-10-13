@@ -1,0 +1,79 @@
+﻿@page
+@model Presentation.Pages.ManageCars.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+    <div class="list-group mt-5">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Car Name</div>
+                <div class="col-sm-9">@Model.CarInformation?.CarName</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Car Description</div>
+                <div class="col-sm-9">@Model.CarInformation?.CarDescription</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Number Of Doors</div>
+                <div class="col-sm-9">@Model.CarInformation?.NumberOfDoors</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Seating Capacity</div>
+                <div class="col-sm-9">@Model.CarInformation?.SeatingCapacity</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Fuel Type</div>
+                <div class="col-sm-9">@Model.CarInformation?.FuelType</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Year</div>
+                <div class="col-sm-9">@Model.CarInformation?.Year</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Car Status</div>
+                <div class="col-sm-9">@Model.CarInformation?.CarStatus</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Car Renting Price Per Day</div>
+                <div class="col-sm-9">@Model.CarInformation?.CarRentingPricePerDay</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Manufacturer</div>
+                <div class="col-sm-9">@Model.CarInformation?.Manufacturer?.ManufacturerName</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3 fw-bold">Supplier</div>
+                <div class="col-sm-9">@Model.CarInformation?.Supplier?.SupplierName</div>
+            </div>
+        </div>
+    
+    <form method="post">
+        <div class="mt-3 gap-3 d-flex">
+            <a class="btn btn-outline-dark" asp-page="./Index">Back</a>
+            <input  type="hidden" asp-for="CarInformation.CarId" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+    </form>
+</div>

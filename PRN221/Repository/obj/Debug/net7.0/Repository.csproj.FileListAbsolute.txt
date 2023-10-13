@@ -1,0 +1,17 @@
+D:\PRN221\Repository\bin\Debug\net7.0\Repository.deps.json
+D:\PRN221\Repository\bin\Debug\net7.0\Repository.runtimeconfig.json
+D:\PRN221\Repository\bin\Debug\net7.0\Repository.dll
+D:\PRN221\Repository\bin\Debug\net7.0\Repository.pdb
+D:\PRN221\Repository\bin\Debug\net7.0\DataAccessObjects.dll
+D:\PRN221\Repository\bin\Debug\net7.0\DataAccessObjects.pdb
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.csproj.AssemblyReference.cache
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.AssemblyInfoInputs.cache
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.AssemblyInfo.cs
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.csproj.CoreCompileInputs.cache
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.csproj.CopyComplete
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.dll
+D:\PRN221\Repository\obj\Debug\net7.0\refint\Repository.dll
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.pdb
+D:\PRN221\Repository\obj\Debug\net7.0\Repository.genruntimeconfig.cache
+D:\PRN221\Repository\obj\Debug\net7.0\ref\Repository.dll

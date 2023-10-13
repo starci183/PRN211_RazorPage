@@ -1,0 +1,46 @@
+﻿@page
+@model Presentation.Pages.ManageCustomers.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Customer Details</h1>
+
+<div class="list-group mt-5">
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Customer Name</div>
+            <div class="col-sm-10">@Model.Customer.CustomerName</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Telephone</div>
+            <div class="col-sm-10">@Model.Customer.Telephone</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Customer Email</div>
+            <div class="col-sm-10">@Model.Customer.Email</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Customer Birthday</div>
+            <div class="col-sm-10">@Model.Customer.CustomerBirthday</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Customer Status</div>
+            <div class="col-sm-10">@Model.Customer.CustomerStatus</div>
+        </div>
+    </div>
+</div>
+
+<div class="gap-3 mt-3 d-flex">
+    <a asp-page="./Index" class="btn btn-outline-dark">Back</a>
+    <a asp-page="./Edit" class="btn btn-dark" asp-route-id="@Model.Customer?.CustomerId">Edit</a>
+</div>

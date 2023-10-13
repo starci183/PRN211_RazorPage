@@ -1,0 +1,54 @@
+﻿@page
+@model Presentation.Pages.CustomerPage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post">
+<div class="row mt-5">
+    <div class="col-md-4">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customer.CustomerId" />
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.CustomerName" type="text" class="form-control" id="customerName" placeholder="Customer Name" value="@Model.Customer.CustomerName">
+                <label asp-for="Customer.CustomerName" for="customerName">Customer Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.Telephone" type="tel" class="form-control" id="telephone" placeholder="Telephone" value="@Model.Customer.Telephone">
+                <label asp-for="Customer.Telephone" for="telephone">Telephone</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.Email" type="email" class="form-control" id="customerEmail" placeholder="Customer Email" value="@Model.Customer.Email">
+                <label asp-for="Customer.Email" for="customerEmail">Customer Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.CustomerBirthday" type="date" class="form-control" id="customerBirthday" placeholder="Customer Birthday" value="@Model.Customer.CustomerBirthday">
+                <label asp-for="Customer.CustomerBirthday" for="customerBirthday">Customer Birthday</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.CustomerStatus" class="form-control" id="password" placeholder="Password" value="@Model.Customer.CustomerStatus">
+                <label asp-for="Customer.CustomerStatus" for="password">Customer Status</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.Password" type="password" class="form-control" id="password" placeholder="Password" value="@Model.Customer.Password">
+                <label asp-for="Customer.Password" for="password">Password</label>
+            </div>
+
+    </div>
+</div>
+
+<div class="gap-3 d-flex">
+    <a asp-page="./Index" class="btn btn-outline-dark"> Back</a>
+    <button type="submit" class="btn btn-dark">Update</button>
+</div>
+        </form>

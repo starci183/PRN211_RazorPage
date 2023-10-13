@@ -1,0 +1,48 @@
+﻿@page
+@model Presentation.Pages.AdminPage.ManageTransactions.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Renting Transaction</h4>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RentingTransaction.RentingTransationId" />
+
+            <div class="form-floating mb-3">
+                <input asp-for="RentingTransaction.RentingDate" class="form-control" id="rentingDate" placeholder="Renting Date">
+                <label asp-for="RentingTransaction.RentingDate" for="rentingDate">Renting Date</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="RentingTransaction.TotalPrice" class="form-control" id="totalPrice" placeholder="Total Price">
+                <label asp-for="RentingTransaction.TotalPrice" for="totalPrice">Total Price</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select asp-for="RentingTransaction.CustomerId" class="form-control" asp-items="ViewBag.CustomerId" id="customerId">
+                </select>
+                <label asp-for="RentingTransaction.CustomerId" for="customerId">Customer</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="RentingTransaction.RentingStatus" class="form-control" id="rentingStatus" placeholder="Renting Status">
+                <label asp-for="RentingTransaction.RentingStatus" for="rentingStatus">Renting Status</label>
+            </div>
+
+            <div class="d-flex gap-3">
+                <input type="submit" value="Save" class="btn btn-dark" />
+                <a asp-page="./Index" class="btn btn-outline-dark">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

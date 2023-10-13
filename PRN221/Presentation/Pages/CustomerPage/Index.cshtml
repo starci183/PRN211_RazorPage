@@ -1,0 +1,104 @@
+﻿@page
+@model Presentation.Pages.CustomerPage.CustomerModel
+
+@{
+    ViewData["Title"] = "Customer";
+}
+
+        <h1> Customer Page </h1>
+
+        <div class="mt-5"> 
+    <h3> Infomation </h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-2 fw-bold">Customer Name</div>
+                    <div class="col-sm-10">@Model.Customer.CustomerName</div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-2 fw-bold">Telephone</div>
+                    <div class="col-sm-10">@Model.Customer.Telephone</div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-2 fw-bold">Customer Email</div>
+                    <div class="col-sm-10">@Model.Customer.Email</div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-2 fw-bold">Customer Birthday</div>
+                    <div class="col-sm-10">@Model.Customer.CustomerBirthday</div>
+                </div>
+            </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-2 fw-bold">Customer Status</div>
+                <div class="col-sm-10">@Model.Customer.CustomerStatus</div>
+            </div>
+        </li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-sm-2 fw-bold">Password</div>
+                    <div class="col-sm-10">@Model.Customer.Password</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <a asp-page="./Edit" class="btn btn-dark mt-3"> Edit </a>
+
+
+
+<div class="mt-5">
+    <h3> Transactions </h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Renting Date
+            </th>
+            <th>
+                Renting Status
+            </th>
+            <th>
+                Customer Id
+            </th>
+            <th>
+                Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            @if (Model.Transactions.Count > 0)
+            {
+                @foreach (var item in Model.Transactions)
+                {
+                    <tr>
+                        <td>
+                            @item.RentingDate
+                        </td>
+                        <td>
+                            @item.RentingStatus
+                        </td>
+                        <td>
+                            @item.CustomerId
+                        </td>
+                        <td>
+                            <a class="btn btn-dark" asp-page="./Details" asp-route-id="@item.RentingTransationId">Details</a>
+                        </td>
+                    </tr>
+                }
+            } else
+            {
+                <tr>
+                    <td colspan="4">
+                        No record found
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+</div>

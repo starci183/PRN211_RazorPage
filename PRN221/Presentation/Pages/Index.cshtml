@@ -1,0 +1,25 @@
+﻿@page
+@model Presentation.Pages.IndexModel
+@{
+}
+
+<div>
+    <div style="max-width:600px" class="mx-auto mt-4">
+        <h1> Sign In </h1>
+        <form method="post" asp-page-handler="SignIn">
+            <div class="form-floating mb-3 mt-5">
+                <input asp-for="Email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input asp-for="Password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div style="color:red"> @Model.ErrorMessage </div>
+            <div class="text-sm mb-1 mt-3"> Do not have an account? <a> Sign Up </a> </div>
+            <button type="submit" class="btn btn-dark mt-1">Sign In</button>
+       </form>
+        </div>
+</div>
+
+

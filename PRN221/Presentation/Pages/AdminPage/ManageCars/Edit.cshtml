@@ -1,0 +1,79 @@
+﻿@page
+@model Presentation.Pages.ManageCars.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<div class="row mt-5">
+    <form method="post">
+            <div class="col-md-4">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="CarInformation.CarId" />
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.CarName" class="form-control" id="carName" placeholder="Car Name">
+                        <label asp-for="CarInformation.CarName" for="carName">Car Name</label>
+                        <span asp-validation-for="CarInformation.CarName" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.CarDescription" class="form-control" id="carDescription" placeholder="Car Description"></input>
+                        <label asp-for="CarInformation.CarDescription" for="carDescription">Car Description</label>
+                        <span asp-validation-for="CarInformation.CarDescription" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.NumberOfDoors" class="form-control" id="numberOfDoors" placeholder="Number of Doors"></input>
+                        <label asp-for="CarInformation.NumberOfDoors" for="numberOfDoors">Number of Doors</label>
+                        <span asp-validation-for="CarInformation.NumberOfDoors" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.SeatingCapacity" class="form-control" id="seatingCapacity" placeholder="Seating Capacity"></input>
+                        <label asp-for="CarInformation.SeatingCapacity" for="seatingCapacity">Seating Capacity</label>
+                        <span asp-validation-for="CarInformation.SeatingCapacity" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.FuelType" class="form-control" id="fuelType" placeholder="Fuel Type"></input>
+                        <label asp-for="CarInformation.FuelType" for="fuelType">Fuel Type</label>
+                        <span asp-validation-for="CarInformation.FuelType" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.Year" class="form-control" id="year" placeholder="Year"></input>
+                        <label asp-for="CarInformation.Year" for="year">Year</label>
+                        <span asp-validation-for="CarInformation.Year" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                <select asp-for="CarInformation.ManufacturerId" asp-items="ViewBag.ManufacturerId" class="form-control" id="manufacturerId">
+                        </select>
+                        <label asp-for="CarInformation.ManufacturerId" for="manufacturerId">Manufacturer</label>
+                        <span asp-validation-for="CarInformation.ManufacturerId" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                <select asp-for="CarInformation.SupplierId" asp-items="ViewBag.SupplierId" class="form-control" id="supplierId">
+                        </select>
+                        <label asp-for="CarInformation.SupplierId" for="supplierId">Supplier</label>
+                        <span asp-validation-for="CarInformation.SupplierId" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.CarStatus" class="form-control" id="carStatus" placeholder="Car Status"></input>
+                        <label asp-for="CarInformation.CarStatus" for="carStatus">Car Status</label>
+                        <span asp-validation-for="CarInformation.CarStatus" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="CarInformation.CarRentingPricePerDay" class="form-control" id="carRentingPrice" placeholder="Car Renting Price Per Day"></input>
+                        <label asp-for="CarInformation.CarRentingPricePerDay" for="carRentingPrice">Car Renting Price Per Day</label>
+                        <span asp-validation-for="CarInformation.CarRentingPricePerDay" class="text-danger"></span>
+                    </div>
+            </div>
+        <div class="d-flex gap-3">
+            <a class="btn btn-outline-dark" asp-page="./Index">Back</a>
+            <input type="submit" value="Save" class="btn btn-dark" />
+        </div>
+    </form>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

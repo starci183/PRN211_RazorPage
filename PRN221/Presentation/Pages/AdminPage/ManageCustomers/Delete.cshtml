@@ -1,0 +1,53 @@
+﻿@page
+@model Presentation.Pages.ManageCustomers.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<div class="mt-5">
+
+    <div class="list-group mt-5">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-2 fw-bold">Customer Name</div>
+                <div class="col-sm-10">@Model.Customer.CustomerName</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-2 fw-bold">Telephone</div>
+                <div class="col-sm-10">@Model.Customer.Telephone</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-2 fw-bold">Customer Email</div>
+                <div class="col-sm-10">@Model.Customer.Email</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-2 fw-bold">Customer Birthday</div>
+                <div class="col-sm-10">@Model.Customer.CustomerBirthday</div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-sm-2 fw-bold">Customer Status</div>
+                <div class="col-sm-10">@Model.Customer.CustomerStatus</div>
+            </div>
+        </div>
+    </div>
+
+    <form method="post">
+        <div class="d-flex gap-3 mt-3">
+            <a class="btn btn-outline-dark" asp-page="./Index">Back</a>
+            <input  type="hidden" asp-for="Customer.CustomerId" />
+            <input class="btn btn-danger" type="submit" value="Delete" />
+        </div>
+
+    </form>
+</div>

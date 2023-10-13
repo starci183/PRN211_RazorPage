@@ -1,0 +1,14 @@
+D:\PRN221\DAOs\bin\Debug\net7.0\DAOs.deps.json
+D:\PRN221\DAOs\bin\Debug\net7.0\DAOs.dll
+D:\PRN221\DAOs\bin\Debug\net7.0\DAOs.pdb
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.csproj.AssemblyReference.cache
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.AssemblyInfoInputs.cache
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.AssemblyInfo.cs
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.csproj.CoreCompileInputs.cache
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.dll
+D:\PRN221\DAOs\obj\Debug\net7.0\refint\DAOs.dll
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.pdb
+D:\PRN221\DAOs\obj\Debug\net7.0\ref\DAOs.dll
+D:\PRN221\DAOs\bin\Debug\net7.0\DAOs.runtimeconfig.json
+D:\PRN221\DAOs\obj\Debug\net7.0\DAOs.genruntimeconfig.cache

@@ -1,0 +1,65 @@
+﻿@page
+@model Presentation.Pages.ManageCustomers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Manage Customers</h1>
+
+<a class="mt-5 btn btn-dark mb-3" asp-page="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Customer Name
+            </th>
+            <th>
+                Telephone
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Customer Birthday
+            </th>
+            <th>
+                Customer Status
+            </th>
+            <th> Edit </th>
+            <th> Details </th>
+            <th> Delete </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Customer)
+        {
+            <tr>
+                <td>
+                    @item.CustomerName
+                </td>
+                <td>
+                    @item.Telephone
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.CustomerBirthday
+                </td>
+                <td>
+                    @item.CustomerStatus
+                </td>
+                <td>
+                    <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@item.CustomerId">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-dark" asp-page="./Details" asp-route-id="@item.CustomerId">Details</a>
+                </td>
+                <td>
+                    <a class="btn btn-dark" asp-page="./Delete" asp-route-id="@item.CustomerId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

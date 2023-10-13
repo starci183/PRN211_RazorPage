@@ -1,0 +1,49 @@
+﻿@page
+@model Presentation.Pages.ManageCustomers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post">
+<div class="row mt-5">
+    <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customer.CustomerId" />
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.CustomerName" class="form-control" id="customerName" placeholder="Customer Name">
+                <label asp-for="Customer.CustomerName" for="customerName">Customer Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.Telephone" class="form-control" id="telephone" placeholder="Telephone">
+                <label asp-for="Customer.Telephone" for="telephone">Telephone</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.Email" class="form-control" id="customerEmail" placeholder="Customer Email">
+                <label asp-for="Customer.Email" for="customerEmail">Customer Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.CustomerBirthday" type="date" class="form-control" id="customerBirthday" placeholder="Customer Birthday">
+                <label asp-for="Customer.CustomerBirthday" for="customerBirthday">Customer Birthday</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Customer.CustomerStatus" type="number" class="form-control" id="customerStatus" placeholder="Customer Status">
+                <label asp-for="Customer.CustomerStatus" for="customerStatus">Customer Status</label>
+            </div>
+    </div>
+
+</div>
+
+<div class ="d-flex gap-3">
+    <a class="btn btn-outline-dark" asp-page="./Index">Back</a>
+    <input type="submit" value="Save" class="btn btn-dark" />
+</div>
+        </form>
+

@@ -1,0 +1,46 @@
+﻿@page
+@model Presentation.Pages.AdminPage.ManageTransactions.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="list-group mt-5">
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Renting Date</div>
+            <div class="col-sm-10">@Model.RentingTransaction.RentingDate</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Total Price</div>
+            <div class="col-sm-10">@Model.RentingTransaction.TotalPrice</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Renting Status</div>
+            <div class="col-sm-10">@Model.RentingTransaction.RentingStatus</div>
+        </div>
+    </div>
+    <div class="list-group-item">
+        <div class="row">
+            <div class="col-sm-2 fw-bold">Customer Email</div>
+            <div class="col-sm-10">@Model.RentingTransaction.Customer.Email</div>
+        </div>
+    </div>
+</div>
+
+<div class="gap-3 mt-3 d-flex">
+    <a asp-page="./Index" class="btn btn-outline-dark">Back</a>
+    <a asp-page="./Edit" asp-route-id="@Model.RentingTransaction?.RentingTransationId" class="btn btn-dark">Edit</a>   
+</div>
+
+
+
+
+
+

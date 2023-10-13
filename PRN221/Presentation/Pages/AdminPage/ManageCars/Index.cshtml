@@ -1,0 +1,55 @@
+﻿@page
+@model Presentation.Pages.ManageCars.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Manage Cars</h1>
+
+
+<a class="mt-5 btn btn-dark mb-3" asp-page="Create">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Car Name</th>
+            <th>Car Description</th>
+            <th>Number Of Doors</th>
+            <th>Seating Capacity</th>
+            <th>Fuel Type</th>
+            <th>Year</th>
+            <th>Car Status</th>
+            <th>Car Renting Price Per Day</th>
+            <th>Manufacturer</th>
+            <th>Supplier</th>
+            <th>Edit</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CarInformation)
+        {
+            <tr>
+                <td>@item.CarName</td>
+                <td>@item.CarDescription</td>
+                <td>@item.NumberOfDoors</td>
+                <td>@item.SeatingCapacity</td>
+                <td>@item.FuelType</td>
+                <td>@item.Year</td>
+                <td>@item.CarStatus</td>
+                <td>@item.CarRentingPricePerDay</td>
+                <td>@item.Manufacturer.ManufacturerName</td>
+                <td>@item.Supplier.SupplierName</td>
+                <td>
+                    <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@item.CarId">Edit</a>
+                </td>
+                    <td>
+                    <a class="btn btn-outline-dark" asp-page="./Details" asp-route-id="@item.CarId">Details</a>
+                </td>
+                <td>
+                    <a class="btn btn-dark" asp-page="./Delete" asp-route-id="@item.CarId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

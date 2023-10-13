@@ -1,0 +1,61 @@
+﻿@page
+@model Presentation.Pages.AdminPage.ManageTransactions.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Renting Transactions</h1>
+
+<p class="mt-5 mb-3">
+    <a asp-page="Create" class="btn btn-dark">Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Renting Date
+            </th>
+            <th>
+                Total Price
+            </th>
+            <th>
+                Renting Status
+            </th>
+            <th>
+                Customer Email
+            </th>
+            <th>Edit</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RentingTransaction)
+        {
+            <tr>
+                <td>
+                    @item.RentingDate
+                </td>
+                <td>
+                    @item.TotalPrice
+                </td>
+                <td>
+                    @item.RentingStatus
+                </td>
+                <td>
+                    @item.Customer.Email
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.RentingTransationId" class="btn btn-dark">Edit</a>
+                </td>
+                    <td>
+                    <a asp-page="./Details" asp-route-id="@item.RentingTransationId" class="btn btn-outline-dark">Details</a> 
+                </td>
+                    <td>
+                    <a asp-page="./Delete" asp-route-id="@item.RentingTransationId" class="btn btn-dark">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
