@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DAOs.Models;
+using System.Text.Json;
 
 namespace Presentation.Pages.ManageCars
 {
@@ -14,6 +15,9 @@ namespace Presentation.Pages.ManageCars
         private readonly ICarRepository _carRepository;
         private readonly IManufacturerRepository _manufacturerRepository;
         private readonly ISupplierRepository _supplierRepository;
+
+        public SelectList ManufacturerSelectList { get; private set; }
+        public SelectList SupplierSelectList { get; private set; }
 
         public CreateModel(
             ICarRepository carRepository,
@@ -24,28 +28,35 @@ namespace Presentation.Pages.ManageCars
             _carRepository = carRepository;
             _manufacturerRepository = manufacturerRepository;
             _supplierRepository = supplierRepository;
+
+            ManufacturerSelectList = new SelectList(_manufacturerRepository.GetAll(), "ManufacturerId", "ManufacturerName");
+            SupplierSelectList = new SelectList(_supplierRepository.GetAll(), "SupplierId", "SupplierName");
         }
 
-
-        public IActionResult OnGet()
-        {
-        ViewData["ManufacturerId"] = new SelectList(_manufacturerRepository.GetAll(), "ManufacturerId", "ManufacturerName");
-        ViewData["SupplierId"] = new SelectList(_supplierRepository.GetAll(), "SupplierId", "SupplierName");
-            return Page();
-        }
+        public CarValidation Errors { get; set; } = default!;
 
         [BindProperty]
         public CarInformation CarInformation { get; set; } = default!;
-        
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        public IActionResult OnGet()
+        {
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue) {
+                return RedirectToPage("/Index");
+            }
+            return Page();
+        }
+
         public IActionResult OnPost()
         {
-          //if (!ModelState.IsValid ||  CarInformation == null)
-          //  {
-          //      return Page();
-          //  }
+            Errors = new CarValidation();
+            Errors.Validate(CarInformation);
 
+            Console.WriteLine(JsonSerializer.Serialize(Errors));
+            if (Errors.HasError())
+            {
+                return Page();
+            }
             _carRepository.Add(CarInformation);
 
             return RedirectToPage("./Index");

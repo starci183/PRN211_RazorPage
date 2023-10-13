@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PRN221\\DAOs\\DataAccessObjects.csproj": {}
+    "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj": {}
   },
   "projects": {
-    "D:\\PRN221\\DAOs\\DataAccessObjects.csproj": {
+    "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN221\\DAOs\\DataAccessObjects.csproj",
+        "projectUniqueName": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj",
         "projectName": "DataAccessObjects",
-        "projectPath": "D:\\PRN221\\DAOs\\DataAccessObjects.csproj",
+        "projectPath": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj",
         "packagesPath": "C:\\Users\\tucuo\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN221\\DAOs\\obj\\",
+        "outputPath": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tucuo\\AppData\\Roaming\\NuGet\\NuGet.Config",

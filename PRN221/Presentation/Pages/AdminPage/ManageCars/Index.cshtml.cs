@@ -20,12 +20,19 @@ namespace Presentation.Pages.ManageCars
 
         public IList<CarInformation> CarInformation { get;set; } = default!;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
+
             if (_carRepository.GetAll() != null)
             {
                 CarInformation = _carRepository.GetCarsWithIncludes();
             }
+            return Page();
         }
     }
 }

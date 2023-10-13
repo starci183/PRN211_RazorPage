@@ -17,31 +17,37 @@
             <div class="form-floating mb-3">
                 <input asp-for="Customer.CustomerName" type="text" class="form-control" id="customerName" placeholder="Customer Name" value="@Model.Customer.CustomerName">
                 <label asp-for="Customer.CustomerName" for="customerName">Customer Name</label>
+                <span class="text-danger"> @Model.Errors?.CustomerNameError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.Telephone" type="tel" class="form-control" id="telephone" placeholder="Telephone" value="@Model.Customer.Telephone">
                 <label asp-for="Customer.Telephone" for="telephone">Telephone</label>
+                <span class="text-danger"> @Model.Errors?.TelephoneError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.Email" type="email" class="form-control" id="customerEmail" placeholder="Customer Email" value="@Model.Customer.Email">
                 <label asp-for="Customer.Email" for="customerEmail">Customer Email</label>
+                <span class="text-danger"> @Model.Errors?.EmailError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.CustomerBirthday" type="date" class="form-control" id="customerBirthday" placeholder="Customer Birthday" value="@Model.Customer.CustomerBirthday">
                 <label asp-for="Customer.CustomerBirthday" for="customerBirthday">Customer Birthday</label>
+                <span class="text-danger"> @Model.Errors?.CustomerBirthdayError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.CustomerStatus" class="form-control" id="password" placeholder="Password" value="@Model.Customer.CustomerStatus">
                 <label asp-for="Customer.CustomerStatus" for="password">Customer Status</label>
+                <span class="text-danger"> @Model.Errors?.CustomerStatusError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.Password" type="password" class="form-control" id="password" placeholder="Password" value="@Model.Customer.Password">
                 <label asp-for="Customer.Password" for="password">Password</label>
+                <span class="text-danger"> @Model.Errors?.PasswordError </span>
             </div>
 
     </div>

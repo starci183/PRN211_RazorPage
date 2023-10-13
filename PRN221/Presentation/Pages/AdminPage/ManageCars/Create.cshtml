@@ -9,68 +9,65 @@
 <form method="post">
 <div class="row mt-5">
     <div class="col-md-4">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="CarInformation.CarName" class="form-control" placeholder="Car Name" />
                 <label asp-for="CarInformation.CarName" class="form-label"></label>
-                <span asp-validation-for="CarInformation.CarName" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.CarNameError </span>
             </div>
-
+                
             <div class="form-group form-floating  mb-3">
                 <input asp-for="CarInformation.CarDescription" class="form-control" placeholder="Car Description" />
                 <label asp-for="CarInformation.CarDescription" class="form-label"></label>
-                <span asp-validation-for="CarInformation.CarDescription" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.CarDescriptionError </span>
             </div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="CarInformation.NumberOfDoors" class="form-control" placeholder="Number Of Doors" />
                 <label asp-for="CarInformation.NumberOfDoors" class="form-label"></label>
-                <span asp-validation-for="CarInformation.NumberOfDoors" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.NumberOfDoorsError </span>
             </div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="CarInformation.SeatingCapacity" class="form-control" placeholder="Seating Capacity" />
                 <label asp-for="CarInformation.SeatingCapacity" class="form-label"></label>
-                <span asp-validation-for="CarInformation.SeatingCapacity" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.SeatingCapacityError </span>
             </div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="CarInformation.FuelType" class="form-control" placeholder="Fuel Type" />
                 <label asp-for="CarInformation.FuelType" class="form-label"></label>
-                <span asp-validation-for="CarInformation.FuelType" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.FuelTypeError </span>
             </div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="CarInformation.Year" class="form-control" placeholder="Year" />
                 <label asp-for="CarInformation.Year" class="form-label"></label>
-                <span asp-validation-for="CarInformation.Year" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.YearError </span>
             </div>
 
             <div class="form-group form-floating  mb-3">
-                <select asp-for="CarInformation.ManufacturerId" class="form-control" asp-items="ViewBag.ManufacturerId">
+                <select asp-for="CarInformation.ManufacturerId" class="form-control" asp-items="@Model.ManufacturerSelectList">
                 </select>
                 <label asp-for="CarInformation.ManufacturerId" class="form-label"></label>
-                <span asp-validation-for="CarInformation.ManufacturerId" class="text-danger"></span>
             </div>
 
             <div class="form-group form-floating  mb-3">
-                <select asp-for="CarInformation.SupplierId" class="form-control" asp-items="ViewBag.SupplierId">
+                <select asp-for="CarInformation.SupplierId" class="form-control" asp-items="@Model.SupplierSelectList">
                 </select>
                 <label asp-for="CarInformation.SupplierId" class="form-label"></label>
-                <span asp-validation-for="CarInformation.SupplierId" class="text-danger"></span>
             </div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="CarInformation.CarStatus" class="form-control" placeholder="Car Status" />
                 <label asp-for="CarInformation.CarStatus" class="form-label"></label>
-                <span asp-validation-for="CarInformation.CarStatus" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.CarStatusError </span>
             </div>
 
             <div class="form-group form-floating mb-3">
                 <input asp-for="CarInformation.CarRentingPricePerDay" class="form-control" placeholder="Car Renting Price Per Day" />
                 <label asp-for="CarInformation.CarRentingPricePerDay" class="form-label"></label>
-                <span asp-validation-for="CarInformation.CarRentingPricePerDay" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.CarRentingPricePerDayError </span>
             </div>
     </div>
 </div>
@@ -81,6 +78,3 @@
         <input type="submit" value="Create" class="btn btn-dark" />
 </div>
         </form>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

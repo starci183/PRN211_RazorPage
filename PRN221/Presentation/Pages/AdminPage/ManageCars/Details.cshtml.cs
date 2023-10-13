@@ -22,6 +22,12 @@ namespace Presentation.Pages.ManageCars
 
         public IActionResult OnGet(int? id)
         {
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
+
             if (id == null)
             {
                 return NotFound();

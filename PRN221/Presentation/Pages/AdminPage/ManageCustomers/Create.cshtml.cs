@@ -13,6 +13,8 @@ namespace Presentation.Pages.ManageCustomers
     {
         private readonly ICustomerRepository _customerRepository;
 
+
+        public CustomerValidation Errors = default!;
         public CreateModel(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;
@@ -21,6 +23,11 @@ namespace Presentation.Pages.ManageCustomers
 
         public IActionResult OnGet()
         {
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
             return Page();
         }
 
@@ -31,7 +38,9 @@ namespace Presentation.Pages.ManageCustomers
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public IActionResult OnPost()
         {
-          if (!ModelState.IsValid || Customer == null)
+            Errors = new CustomerValidation();
+            Errors.Validate(Customer);
+            if (Errors.HasError())
             {
                 return Page();
             }

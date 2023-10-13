@@ -14,17 +14,25 @@ namespace Presentation.Pages.CustomerPage
             _rentingTransactionRepository = rentingTransactionRepository;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
             var customerJson = HttpContext.Session.GetString("account");
-            if (customerJson == null) return;
+            if (customerJson == null) return RedirectToPage("/Index"); ;
             
             var deCustomer = JsonSerializer.Deserialize<Customer>(customerJson);
-            if (deCustomer == null) return;
+            if (deCustomer == null) return RedirectToPage("/Index"); ;
 
             Customer = deCustomer;
 
             Transactions = _rentingTransactionRepository.GetAllByCustomerId(Customer.CustomerId);
+
+            return Page();
+        }
+
+        public IActionResult OnPostSignOut()
+        {
+            HttpContext.Session.Remove("account");
+            return RedirectToPage("/Index");
         }
 
         [BindProperty]

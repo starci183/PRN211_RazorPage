@@ -20,9 +20,15 @@ namespace Presentation.Pages.AdminPage.ManageTransactions
 
         public IList<RentingTransaction> RentingTransaction { get;set; } = default!;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-              RentingTransaction = _rentingTransactionRepository.GetAllIncludes();
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
+            RentingTransaction = _rentingTransactionRepository.GetAllIncludes();
+            return Page();
         }
     }
 }

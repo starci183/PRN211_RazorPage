@@ -7,42 +7,31 @@
 
 <h1>Create</h1>
 
-<h4>Renting Transaction</h4>
-<hr />
 <div class="row mt-5">
     <div class="col-md-4">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group form-floating  mb-3">
-                <input asp-for="RentingTransaction.RentingTransationId" class="form-control" placeholder="Renting Transaction ID" />
-                <label asp-for="RentingTransaction.RentingTransationId" class="form-label"></label>
-                <span asp-validation-for="RentingTransaction.RentingTransationId" class="text-danger"></span>
-            </div>
-
             <div class="form-group form-floating  mb-3">
                 <input asp-for="RentingTransaction.RentingDate" class="form-control" placeholder="Renting Date" />
                 <label asp-for="RentingTransaction.RentingDate" class="form-label"></label>
-                <span asp-validation-for="RentingTransaction.RentingDate" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.RentingDateError </span>
             </div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="RentingTransaction.TotalPrice" class="form-control" placeholder="Total Price" />
                 <label asp-for="RentingTransaction.TotalPrice" class="form-label"></label>
-                <span asp-validation-for="RentingTransaction.TotalPrice" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.TotalPriceError </span>
             </div>
 
             <div class="form-group form-floating  mb-3">
-                <select asp-for="RentingTransaction.CustomerId" class="form-control" asp-items="ViewBag.CustomerId" placeholder="Customer ID">
+                <select asp-for="RentingTransaction.CustomerId" class="form-control" asp-items="@Model.CustomerList" placeholder="Customer ID">
                 </select>
                 <label asp-for="RentingTransaction.CustomerId" class="form-label"></label>
-                <span asp-validation-for="RentingTransaction.CustomerId" class="text-danger"></span>
             </div>
 
             <div class="form-group form-floating  mb-3">
                 <input asp-for="RentingTransaction.RentingStatus" class="form-control" placeholder="Renting Status" />
                 <label asp-for="RentingTransaction.RentingStatus" class="form-label"></label>
-                <span asp-validation-for="RentingTransaction.RentingStatus" class="text-danger"></span>
+                <span class="text-danger"> @Model.Errors?.RentingStatusError </span>
             </div>
 
             <div class="d-flex gap-3">
@@ -53,6 +42,3 @@
         </form>
     </div>
 </div>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

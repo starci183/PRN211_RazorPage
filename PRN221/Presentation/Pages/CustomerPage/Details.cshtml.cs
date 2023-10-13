@@ -23,6 +23,11 @@ namespace Presentation.Pages.CustomerPage
 
         public IActionResult OnGet(int? id)
         {
+            var account = HttpContext.Session.GetString("account");
+            if (account != null)
+            {
+                return RedirectToPage("/Index");
+            }
             if (id == null)
             {
                 return NotFound();

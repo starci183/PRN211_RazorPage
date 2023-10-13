@@ -15,10 +15,15 @@ namespace Presentation.Pages.AdminPage.ManageTransactions
         private readonly IRentingTransactionRepository _rentingTransactionRepository;
         private readonly ICustomerRepository _customerRepository;
 
+        public SelectList CustomerList { get; set; }
+        public RentingTransactionValidation Errors = default!;
         public EditModel(IRentingTransactionRepository rentingTransactionRepository, ICustomerRepository customerRepository)
         {
             _rentingTransactionRepository = rentingTransactionRepository;
             _customerRepository = customerRepository;
+
+            CustomerList = new SelectList(_customerRepository.GetAll(), "CustomerId", "Email");
+
         }
 
         [BindProperty]
@@ -37,7 +42,7 @@ namespace Presentation.Pages.AdminPage.ManageTransactions
                 return NotFound();
             }
             RentingTransaction = rentingtransaction;
-           ViewData["CustomerId"] = new SelectList(_customerRepository.GetAll(), "CustomerId", "Email");
+
             return Page();
         }
 
@@ -45,10 +50,18 @@ namespace Presentation.Pages.AdminPage.ManageTransactions
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public IActionResult OnPost()
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            Errors = new RentingTransactionValidation();
+            Errors.Validate(RentingTransaction);
+            if (Errors.HasError())
+            {
+                return Page();
+            }
 
             _rentingTransactionRepository.Update(RentingTransaction);
             return RedirectToPage("./Index");

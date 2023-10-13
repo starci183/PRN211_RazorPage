@@ -10,32 +10,36 @@
 <form method="post">
 <div class="row mt-5">
     <div class="col-md-4">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Customer.CustomerId" />
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.CustomerName" class="form-control" id="customerName" placeholder="Customer Name">
                 <label asp-for="Customer.CustomerName" for="customerName">Customer Name</label>
+                <span class="text-danger"> @Model.Errors?.CustomerNameError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.Telephone" class="form-control" id="telephone" placeholder="Telephone">
                 <label asp-for="Customer.Telephone" for="telephone">Telephone</label>
+                <span class="text-danger"> @Model.Errors?.TelephoneError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.Email" class="form-control" id="customerEmail" placeholder="Customer Email">
                 <label asp-for="Customer.Email" for="customerEmail">Customer Email</label>
+                <span class="text-danger"> @Model.Errors?.EmailError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.CustomerBirthday" type="date" class="form-control" id="customerBirthday" placeholder="Customer Birthday">
                 <label asp-for="Customer.CustomerBirthday" for="customerBirthday">Customer Birthday</label>
+                <span class="text-danger"> @Model.Errors?.CustomerBirthdayError </span>
             </div>
 
             <div class="form-floating mb-3">
                 <input asp-for="Customer.CustomerStatus" type="number" class="form-control" id="customerStatus" placeholder="Customer Status">
                 <label asp-for="Customer.CustomerStatus" for="customerStatus">Customer Status</label>
+                <span class="text-danger"> @Model.Errors?.CustomerStatusError </span>
             </div>
     </div>
 

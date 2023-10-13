@@ -10,7 +10,6 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<FucarRentingManagementContext>(options =>
     options.UseSqlServer(ConnectionString.GetConnectionString()));
-
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<IRentingTransactionRepository, RentingTransactionRepository>();
@@ -33,7 +32,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseSession();
 
 app.UseAuthorization();

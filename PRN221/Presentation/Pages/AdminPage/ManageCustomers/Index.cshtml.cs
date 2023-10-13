@@ -20,9 +20,16 @@ namespace Presentation.Pages.ManageCustomers
 
         public IList<Customer> Customer { get;set; } = default!;
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
+
             Customer = _customerRepository.GetAll();
+            return Page();
         }
     }
 }

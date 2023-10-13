@@ -3196,11 +3196,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PRN221\\Repository\\Repository.csproj",
+      "projectUniqueName": "D:\\PRN211_RazorPage\\PRN221\\Repository\\Repository.csproj",
       "projectName": "Repository",
-      "projectPath": "D:\\PRN221\\Repository\\Repository.csproj",
+      "projectPath": "D:\\PRN211_RazorPage\\PRN221\\Repository\\Repository.csproj",
       "packagesPath": "C:\\Users\\tucuo\\.nuget\\packages\\",
-      "outputPath": "D:\\PRN221\\Repository\\obj\\",
+      "outputPath": "D:\\PRN211_RazorPage\\PRN221\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tucuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3217,8 +3217,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\PRN221\\DAOs\\DataAccessObjects.csproj": {
-              "projectPath": "D:\\PRN221\\DAOs\\DataAccessObjects.csproj"
+            "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj": {
+              "projectPath": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj"
             }
           }
         }

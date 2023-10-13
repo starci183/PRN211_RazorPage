@@ -18,8 +18,10 @@ public partial class FucarRentingManagementContext : DbContext
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
-        => options.UseSqlServer(ConnectionString.GetConnectionString());
- 
+         {
+        options.UseSqlServer(ConnectionString.GetConnectionString());
+        options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+}
     public virtual DbSet<CarInformation> CarInformations { get; set; }
 
     public virtual DbSet<Customer> Customers { get; set; }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAOs.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Presentation.Pages.ManageCars
 {
@@ -15,6 +16,8 @@ namespace Presentation.Pages.ManageCars
         private readonly ICarRepository _carRepository;
         private readonly IManufacturerRepository _manufacturerRepository;
         private readonly ISupplierRepository _supplierRepository;
+        public SelectList ManufacturerSelectList { get; private set; }
+        public SelectList SupplierSelectList { get; private set; }
 
         [ActivatorUtilitiesConstructor]
         public EditModel(
@@ -26,6 +29,9 @@ namespace Presentation.Pages.ManageCars
             _carRepository = carRepository;
             _manufacturerRepository = manufacturerRepository;
             _supplierRepository = supplierRepository;
+
+            ManufacturerSelectList = new SelectList(_manufacturerRepository.GetAll(), "ManufacturerId", "ManufacturerName");
+            SupplierSelectList = new SelectList(_supplierRepository.GetAll(), "SupplierId", "SupplierName");
         }
 
         [BindProperty]
@@ -33,7 +39,13 @@ namespace Presentation.Pages.ManageCars
 
         public IActionResult OnGet(int? id)
         {
-            if (id == null || _carRepository.GetAll() == null)
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            if (id == null)
             {
                 return NotFound();
             }
@@ -43,21 +55,22 @@ namespace Presentation.Pages.ManageCars
             {
                 return NotFound();
             }
+
             CarInformation = carInformation;
 
-           ViewData["ManufacturerId"] = new SelectList(_manufacturerRepository.GetAll(), "ManufacturerId", "ManufacturerName");
-           ViewData["SupplierId"] = new SelectList(_supplierRepository.GetAll(), "SupplierId", "SupplierName");
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
+        public CarValidation Errors { get; set; } = default!;
         public IActionResult OnPost()
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
-            //}
+            Errors = new CarValidation();
+            Errors.Validate(CarInformation);
+
+            if (Errors.HasError())
+            {
+                return Page();
+            }
 
             _carRepository.Update(CarInformation);
             return RedirectToPage("./Index");

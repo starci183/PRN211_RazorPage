@@ -21,9 +21,7 @@ namespace Presentation.Pages
             ErrorMessage = null;
         }
 
-        public void OnGet()
-        {
-        }
+  
         [BindProperty]
         [EmailAddress]
         [DataType(DataType.EmailAddress)]
@@ -34,12 +32,26 @@ namespace Presentation.Pages
         [DataType(DataType.Password)]
         public string Password { get; set; } = default!;
 
+        public IActionResult OnGet()
+        {
+            if (HttpContext.Session.GetInt32("isAdmin").HasValue)
+            {
+                return Redirect("/AdminPage");
+            }
+            else if (HttpContext.Session.GetString("account") != null)
+            {
+                return Redirect("/CustomerPage");
+            }
+            else return Page();
+        }
+
+
         public IActionResult OnPostSignIn()
         {   
-            if (!ModelState.IsValid) return Page();
-
-            if (CheckAdmin()) return Redirect("/Admin");
-
+            if (CheckAdmin()){
+                HttpContext.Session.SetInt32("isAdmin", 1);
+                return Redirect("/AdminPage");
+            }
             var account = _customerRepository.GetByEmailAndPassword(Email, Password);
             
             if (account == null)

@@ -12,3 +12,17 @@ D:\PRN221\DAOs\obj\Debug\net7.0\refint\DataAccessObjects.dll
 D:\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.pdb
 D:\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.genruntimeconfig.cache
 D:\PRN221\DAOs\obj\Debug\net7.0\ref\DataAccessObjects.dll
+D:\PRN211_RazorPage\PRN221\DAOs\bin\Debug\net7.0\DataAccessObjects.deps.json
+D:\PRN211_RazorPage\PRN221\DAOs\bin\Debug\net7.0\DataAccessObjects.runtimeconfig.json
+D:\PRN211_RazorPage\PRN221\DAOs\bin\Debug\net7.0\DataAccessObjects.dll
+D:\PRN211_RazorPage\PRN221\DAOs\bin\Debug\net7.0\DataAccessObjects.pdb
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.csproj.AssemblyReference.cache
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.GeneratedMSBuildEditorConfig.editorconfig
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.AssemblyInfoInputs.cache
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.AssemblyInfo.cs
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.csproj.CoreCompileInputs.cache
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.dll
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\refint\DataAccessObjects.dll
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.pdb
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\DataAccessObjects.genruntimeconfig.cache
+D:\PRN211_RazorPage\PRN221\DAOs\obj\Debug\net7.0\ref\DataAccessObjects.dll

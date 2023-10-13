@@ -4,8 +4,13 @@
 
 }
 <div class="mt-5 mx-auto" style="max-width:300px">
-    <button type="button" class="btn btn-dark btn-lg mb-3 w-100">Manage Customers</button>
-    <button type="button" class="btn btn-outline-dark btn-lg mb-3 w-100">Manage Cars</button>
-    <button type="button" class="btn btn-dark btn-lg mb-3 w-100">Manage Transactions</button>
-    <button type="button" class="btn btn-outline-dark btn-lg w-100">Export Excel</button>
+    <a asp-page="./ManageCustomers/Index" class="btn btn-dark btn-lg mb-3 w-100">Manage Customers</a>
+    <a asp-page="./ManageCars/Index" class="btn btn-outline-dark btn-lg mb-3 w-100">Manage Cars</a>
+    <a asp-page="./ManageTransactions/Index" class="btn btn-dark btn-lg mb-3 w-100">Manage Transactions</a>
+    <form asp-page-handler="Create" method="post">
+        <button class="btn btn-lg btn-outline-dark mb-3 w-100">Export Excel</button>
+    </form>
+    <form asp-page-handler="SignOut" method="post">
+        <button class="btn btn-dark btn-lg mb-3 w-100">Sign Out</button>
+    </form>
 </div>

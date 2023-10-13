@@ -7,12 +7,15 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAOs.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Presentation.Pages.ManageCustomers
 {
     public class EditModel : PageModel
     {
         private readonly ICustomerRepository _customerRepository;
+       
+        public CustomerValidation Errors = default!;
 
         public EditModel(ICustomerRepository customerRepository)
         {
@@ -24,6 +27,12 @@ namespace Presentation.Pages.ManageCustomers
 
         public IActionResult OnGet(int? id)
         {
+            var isAdmin = HttpContext.Session.GetInt32("isAdmin");
+            if (!isAdmin.HasValue)
+            {
+                return RedirectToPage("/Index");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -41,7 +50,9 @@ namespace Presentation.Pages.ManageCustomers
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            Errors = new CustomerValidation();
+            Errors.Validate(Customer);
+            if (Errors.HasError())
             {
                 return Page();
             }

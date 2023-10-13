@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PRN221\\Presentation\\Presentation.csproj": {}
+    "D:\\PRN211_RazorPage\\PRN221\\Presentation\\Presentation.csproj": {}
   },
   "projects": {
-    "D:\\PRN221\\DAOs\\DataAccessObjects.csproj": {
+    "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN221\\DAOs\\DataAccessObjects.csproj",
+        "projectUniqueName": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj",
         "projectName": "DataAccessObjects",
-        "projectPath": "D:\\PRN221\\DAOs\\DataAccessObjects.csproj",
+        "projectPath": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj",
         "packagesPath": "C:\\Users\\tucuo\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN221\\DAOs\\obj\\",
+        "outputPath": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tucuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,14 +85,14 @@
         }
       }
     },
-    "D:\\PRN221\\Presentation\\Presentation.csproj": {
+    "D:\\PRN211_RazorPage\\PRN221\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN221\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "D:\\PRN211_RazorPage\\PRN221\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "D:\\PRN221\\Presentation\\Presentation.csproj",
+        "projectPath": "D:\\PRN211_RazorPage\\PRN221\\Presentation\\Presentation.csproj",
         "packagesPath": "C:\\Users\\tucuo\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN221\\Presentation\\obj\\",
+        "outputPath": "D:\\PRN211_RazorPage\\PRN221\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tucuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -110,11 +110,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\PRN221\\DAOs\\DataAccessObjects.csproj": {
-                "projectPath": "D:\\PRN221\\DAOs\\DataAccessObjects.csproj"
+              "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj": {
+                "projectPath": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj"
               },
-              "D:\\PRN221\\Repository\\Repository.csproj": {
-                "projectPath": "D:\\PRN221\\Repository\\Repository.csproj"
+              "D:\\PRN211_RazorPage\\PRN221\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\PRN211_RazorPage\\PRN221\\Repository\\Repository.csproj"
               }
             }
           }
@@ -129,6 +129,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.2.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.12, )"
@@ -177,14 +181,14 @@
         }
       }
     },
-    "D:\\PRN221\\Repository\\Repository.csproj": {
+    "D:\\PRN211_RazorPage\\PRN221\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN221\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\PRN211_RazorPage\\PRN221\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "D:\\PRN221\\Repository\\Repository.csproj",
+        "projectPath": "D:\\PRN211_RazorPage\\PRN221\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\tucuo\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN221\\Repository\\obj\\",
+        "outputPath": "D:\\PRN211_RazorPage\\PRN221\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tucuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -201,8 +205,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\PRN221\\DAOs\\DataAccessObjects.csproj": {
-                "projectPath": "D:\\PRN221\\DAOs\\DataAccessObjects.csproj"
+              "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj": {
+                "projectPath": "D:\\PRN211_RazorPage\\PRN221\\DAOs\\DataAccessObjects.csproj"
               }
             }
           }

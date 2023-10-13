@@ -48,7 +48,12 @@
             </li>
         </ul>
     </div>
-    <a asp-page="./Edit" class="btn btn-dark mt-3"> Edit </a>
+    <div class="d-flex gap-3 mt-3"> 
+    <a asp-page="./Edit" class="btn btn-outline-dark"> Edit </a>
+<form asp-page-handler="SignOut" method="post" class="w-25">
+        <button class="btn btn-dark">Sign Out</button>
+</form>
+</div>
 
 
 
